@@ -10,8 +10,13 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   styleUrl: './user.scss'
 })
 export class User {
+
   selectedUser = DUMMY_USERS[randomIndex];
   get imagePath() {
     return `assets/users/${this.selectedUser.avatar}`;
+  }
+
+  onSelectUser() {
+    console.log('Selected user:', this.selectedUser.name);
   }
 }
