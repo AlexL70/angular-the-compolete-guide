@@ -1,4 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+interface TaskEntity {
+    id: string;
+    userId: string;
+    title: string;
+    summary: string;
+    dueDate: Date;
+}
 
 @Component({
   selector: 'app-task',
@@ -7,5 +15,5 @@ import { Component } from '@angular/core';
   styleUrl: './task.scss'
 })
 export class Task {
-
+  @Input({ required: true }) task!: TaskEntity;
 }

@@ -17,14 +17,14 @@ export class Tasks {
       userId: 'u1',
       title: 'Complete Angular Essentials Course',
       summary: 'Finish the course and apply the knowledge in a project.',
-      time: new Date('2025-08-01T10:00:00'),
+      dueDate: new Date('2025-08-01T10:00:00'),
     },
     {
       id: 't2',
       userId: 'u3',
       title: 'Build first prototype',
       summary: 'Build a first prototype of the online shop website',
-      dueDate: '2026-05-31',
+      dueDate: new Date('2026-05-31T00:00:00'),
     },
     {
       id: 't3',
@@ -32,7 +32,7 @@ export class Tasks {
       title: 'Prepare issue template',
       summary:
         'Prepare and describe an issue template which will help with project management',
-      dueDate: '2027-06-15',
+      dueDate: new Date('2027-06-15T00:00:00'),
     },
   ];
 
