@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Task } from "./task/task";
 import { NewTask } from './new-task/new-task';
+import { type NewTaskEntity, type TaskEntity } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -13,7 +14,7 @@ export class Tasks {
   @Input({required: true}) userName!: string;
   @Input({ required: true }) userId!: string;
   protected isAddingTask = false;
-  tasks = [
+  tasks: TaskEntity[] = [
     {
       id: 't1',
       userId: 'u1',
@@ -52,4 +53,13 @@ export class Tasks {
   onCancelAddTask() {
       this.isAddingTask = false;
   }
+  onAddTask(newTask: NewTaskEntity) {
+      this.isAddingTask = false;
+      this.tasks.push({
+          ...newTask,
+          id: Math.random().toString(),
+          userId: this.userId
+      });
+  }
+
 }
