@@ -8,6 +8,10 @@
       </li>
     }
   </ul>
-  <app-tasks [userName]="selectedUser?.name" />
+  @if (selectedUser) {
+    <app-tasks [userName]="selectedUser.name" />
+  } @else {
+    <p id="fallback">Please select a user.</p>
+  }
 </main>
 <router-outlet></router-outlet>

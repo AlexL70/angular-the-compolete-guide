@@ -15,7 +15,7 @@ import { SafeResourceUrl } from '@angular/platform-browser';
 export class App {
   protected title = 'Angular Essentials';
   users = DUMMY_USERS;
-  selectedUserId: string = DUMMY_USERS[0].id;
+  selectedUserId?: string;
   get selectedUser() {
     return this.users.find(user => user.id === this.selectedUserId);
   }

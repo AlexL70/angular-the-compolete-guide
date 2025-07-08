@@ -8,5 +8,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './tasks.scss'
 })
 export class Tasks {
-  @Input() userName?: string;
+  @Input({required: true}) userName!: string;
 }
