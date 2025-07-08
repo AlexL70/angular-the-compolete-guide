@@ -10,7 +10,11 @@
     }
   </ul>
   @if (selectedUser) {
-    <app-tasks [userName]="selectedUser.name" [userId]="selectedUser.id" />
+    @if (addingNewTask) {
+      <app-new-task /> 
+    } @else {
+      <app-tasks (addNewTask)="onAddNewTask()" [userName]="selectedUser.name" [userId]="selectedUser.id" />
+    }
   } @else {
     <p id="fallback">Please select a user.</p>
   }

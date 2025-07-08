@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Task } from "./task/task";
 
@@ -11,6 +11,7 @@ import { Task } from "./task/task";
 export class Tasks {
   @Input({required: true}) userName!: string;
   @Input({ required: true }) userId!: string;
+  @Output() addNewTask = new EventEmitter<string>();
   tasks = [
     {
       id: 't1',
@@ -42,5 +43,8 @@ export class Tasks {
 
   onCompleteTask(taskId: string) {
     this.tasks = this.tasks.filter(task => task.id !== taskId);
+  }
+  onNewAddNewTask() {
+    this.addNewTask.emit(this.userId);
   }
 }
