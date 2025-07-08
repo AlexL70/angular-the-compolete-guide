@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common'
 import { RouterOutlet } from '@angular/router';
 import { Header } from "./header/header";
 import { User } from "./user/user";
 import { Tasks } from './tasks/tasks';
 import { DUMMY_USERS } from './dummy-users';
-import { SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, User, Tasks],
+  imports: [RouterOutlet, Header, User, Tasks, NgFor, NgIf],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
