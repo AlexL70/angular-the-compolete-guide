@@ -25,15 +25,10 @@ export class Tasks {
   onCompleteTask(taskId: string) {
     this.tasksService.removeTask(taskId);
   }
-
   onStartAddTask() {
       this.isAddingTask = true;
   }
-  onCancelAddTask() {
-      this.isAddingTask = false;
-  }
-  onAddTask(newTask: NewTaskEntity) {
-      this.tasksService.addTask(newTask, this.userId);
+  onCloseAddTask() {
       this.isAddingTask = false;
   }
 }
