@@ -8,6 +8,7 @@ import { TasksService } from './tasks.service';
 @Component({
   selector: 'app-tasks',
   imports: [CommonModule, Task, NewTask],
+  standalone: false,
   templateUrl: './tasks.html',
   styleUrl: './tasks.scss'
 })
