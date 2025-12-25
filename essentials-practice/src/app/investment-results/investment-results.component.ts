@@ -15,6 +15,6 @@ export class InvestmentResultsComponent {
   private service = inject(InvestmentService);
 
   get results() {
-    return this.service.investmentResults;
+    return this.service.investmentResults.asReadonly();
   }
 }
